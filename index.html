@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--<div>-->
+<div id="slides" class="slideshow-container">
+
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="pictures/IG1.jpg" style="width:100%">
+        <div class="text">Caption Text</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="pictures/IG2.jpg" style="width:100%">
+        <div class="text">Caption Two</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="pictures/IG3.jpg" style="width:100%">
+        <div class="text">Caption Three</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">4 / 4</div>
+        <img src="pictures/IG4.jpg" style="width:100%">
+        <div class="text">Caption Four</div>
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+</div>
+
+<!--<div id="audio">-->
+<!--    -->
+<!--</div>-->
+
+<div id="buttons">
+    <audio id="audio_pl" class="audio_player" src="imagine-dragons-warriors.mp3" controls></audio>
+    <button id="player-btn" class="player__btn">Play</button>
+    &nbsp;&nbsp;
+    <button class="pause">Pause</button>
+    &nbsp;&nbsp;
+    <button class="prevBut">previous</button>
+    &nbsp;&nbsp;
+    <button class="nextBut">next</button>
+<!--    <div id="canvas">-->
+        <canvas id="canvasLine" width="300" height="200"></canvas>
+<!--    </div>-->
+</div>
+
+<!--</div>-->
+
+</body>
+<script src="slideShow.js"></script>
+<script src="actions.js"></script>
+<script src="soundLine.js"></script>
+
+</html>
