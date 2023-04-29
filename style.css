@@ -1,12 +1,21 @@
-/*.audio-track {*/
-/*    width: 150px;*/
-/*    height: 3px;*/
-/*    background-color: #dddddd;*/
-/*    margin: 20px 0*/
-/*}*/
-* {
-    /*background: black;*/
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    /*background-size: 400% 400%;*/
+    /*animation: gradient 15s ease infinite;*/
+    height: 100vh;
 }
+
+/*@keyframes gradient {*/
+/*    0% {*/
+/*        background-position: 0% 50%;*/
+/*    }*/
+/*    50% {*/
+/*        background-position: 100% 50%;*/
+/*    }*/
+/*    100% {*/
+/*        background-position: 0% 50%;*/
+/*    }*/
+/*}*/
 
 /*#canvasLine {*/
 /*    width: 250px;*/
@@ -26,13 +35,44 @@
     margin: 100px 100px 0 -125px;
 }
 
+.nextBut {
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    background: #4676D7;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+
+.pause {
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    background: #4676D7;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+.player__btn {
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    background: #4676D7;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
 #buttons {
     width: 250px;
     height: 250px;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: 70px 20px 0 -125px;
+    margin: 25px 20px 0 -145px;
 }
 
 
@@ -42,8 +82,9 @@
 
 /* Slideshow container */
 .slideshow-container {
-    max-width: 700px;
+    max-width: 600px;
     position: relative;
+    /*margin-right: 10px;*/
     margin: auto;
 }
 

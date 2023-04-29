@@ -2,28 +2,31 @@ let audio = document.getElementById("audio_pl");
 let time = document.querySelector(".time");
 let btnPlay = document.querySelector(".player__btn");
 let btnPause = document.querySelector(".pause");
-let btnPrev = document.querySelector(".prevBut");
+// let btnPrev = document.querySelector(".prevBut");
 let btnNext = document.querySelector(".nextBut");
 
 
-let trecks = ['imagine-dragons-warriors.mp3', 'imagine-dragons-whatever-it-takes.mp3',
+let tracks = ['imagine-dragons-warriors.mp3', 'imagine-dragons-whatever-it-takes.mp3',
     'imagine-dragons-it039s-time.mp3', 'imagine-dragons-bad-liar.mp3']
 
-let numberOfTreck;
+let numberOfTrack = 0;
 
 
 window.onload = function () {
-    numberOfTreck = 0;
+    numberOfTrack = 0;
 }
 
 
-function switchTreck(numTreck) {
-    audio.src = '' + trecks[numTreck];
+function switchTrack(numTrack) {
+    audio.src = '' + tracks[numTrack];
     audio.currentTime = 0;
     audio.play();
 }
 
 btnPause.addEventListener("click", function () {
+    let canvas = document.getElementById("canvasLine");
+    let canvasCtx = canvas.getContext("2d");
+    canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
     audio.pause();
     clearInterval(audioPlay)
 });
@@ -38,36 +41,36 @@ btnPlay.addEventListener("click", function () {
 
         time.style.width = (audioTime * 100) / audioLength + '%';
 
-        if (audioTime === audioLength && treck < 3) {
-            treck++;
-            switchTreck(treck);
-        } else if (audioTime === audioLength && treck >= 3) {
-            treck = 0;
-            switchTreck(treck);
+        if (audioTime === audioLength && track < 3) {
+            track++;
+            switchTrack(track);
+        } else if (audioTime === audioLength && track >= 3) {
+            track = 0;
+            switchTrack(track);
         }
     }, 10)
 });
 
 
-btnPrev.addEventListener("click", function () {
-    if (numberOfTreck > 0) {
-        numberOfTreck--;
-        switchTreck(numberOfTreck);
-    } else {
-        numberOfTreck = 3;
-        switchTreck(numberOfTreck);
-    }
-});
+// btnPrev.addEventListener("click", function () {
+//     if (numberOfTrack > 0) {
+//         numberOfTrack--;
+//         switchTrack(numberOfTrack);
+//     } else {
+//         numberOfTrack = 3;
+//         switchTrack(numberOfTrack);
+//     }
+// });
 
 
 btnNext.addEventListener("click", function () {
-    console.log(numberOfTreck)
+    console.log(numberOfTrack)
     console.log("next")
-    if (numberOfTreck < 3) {
-        numberOfTreck++;
-        switchTreck(numberOfTreck);
+    if (numberOfTrack < 3) {
+        numberOfTrack++;
+        switchTrack(numberOfTrack);
     } else {
-        numberOfTreck = 0;
-        switchTreck(numberOfTreck);
+        numberOfTrack = 0;
+        switchTrack(numberOfTrack);
     }
 });

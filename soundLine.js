@@ -1,27 +1,47 @@
-let body, num, array, width, context, logo, myElements, analyser, src, height;
+let body, num, array, width, context, logo, myElements, analyser;
 
 body = document.querySelector('body');
 
 num = 32;
 
-array = new Uint8Array(num*2);
+array = new Uint8Array(num * 2);
 
 width = 10;
 
-
 const player = document.getElementById('audio_pl')
 
-window.onclick = function(){
+window.onload = function (){
+    let el = document.getElementsByClassName('.pause');
+    el.click();
+}
 
-    if(context) return;
 
-    // body.querySelector('h1').remove();
+// window.addEventListener('load', function(){
+//     'use strict';
+//
+//     // Получим наш параграф
+//     let el = document.querySelector('.pause');
+//
+//     // Событие, которое происходит при клике на параграф
+//     el.addEventListener('click', function(){
+//         alert('Был клик');
+//     });
+//
+//     // Тут запускаем через 5 секунд симуляцию клика по парагафу
+//     setTimeout(function(){
+//         el.click();
+//     }, 5000);
+// });
 
-    for(let i = 0 ; i < num ; i++){
+window.onclick = function () {
+
+    if (context) return;
+
+    for (let i = 0; i < num; i++) {
         logo = document.createElement('div');
         logo.className = 'logo';
         logo.style.background = 'red';
-        logo.style.minWidth = width+'px';
+        logo.style.minWidth = width + 'px';
         body.appendChild(logo);
     }
 
@@ -34,36 +54,19 @@ window.onclick = function(){
 
 }
 
-// window.requestAnimationFrame(loop);
-//
-// function loop() {
-//     window.requestAnimationFrame(loop);
-//     analyser.getByteFrequencyData(array);
-//     for (let i = 0; i < num; i++) {
-//         height = array[i + num];
-//         myElements[i].style.minHeight = height + 'px';
-//         myElements[i].style.opacity = 0.008 * height;
-//         console.log(height)
-//     }
-// }
-
-
 canvas = document.getElementById("canvasLine");
 canvasCtx = canvas.getContext("2d");
-
-// analyser.fftSize = 256;
-// bufferLength = analyser.frequencyBinCount;
-// dataArray = new Uint8Array(bufferLength);
 
 Width = canvas.width;
 Height = canvas.height;
 
 const draw = function () {
     window.requestAnimationFrame(draw);
-    console.log(array)
+    // console.log(array)
     analyser.getByteFrequencyData(array);
 
-    canvasCtx.fillStyle = "rgb(255, 255, 255)";
+    canvasCtx.fillStyle = "rgb(162,42,42)";
+    // canvasCtx.fillStyle = linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     canvasCtx.fillRect(0, 0, Width, Height);
 
     let barWidth = (Width / array.length) * 2;
